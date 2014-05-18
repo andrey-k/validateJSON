@@ -5,6 +5,10 @@ var express = require('express'),
     routes = require('./routes/index'),
     app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
 app.use(bodyParser.json());
 // not well formed json
 app.use(function (error, req, res, next){
